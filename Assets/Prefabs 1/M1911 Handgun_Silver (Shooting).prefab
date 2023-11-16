@@ -490,8 +490,13 @@ MonoBehaviour:
   destroyTimer: 2
   shotPower: 700
   ejectPower: 250
+  magazine: {fileID: 0}
+  socketInteractor: {fileID: 0}
   source: {fileID: 0}
   fireSound: {fileID: 0}
+  reload: {fileID: 0}
+  nobulletsfx: {fileID: 0}
+  isslide: 1
 --- !u!1 &5149128439743028687
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +714,7 @@ Transform:
   m_GameObject: {fileID: 5567871887558766138}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000059604645, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00000001211166, y: 0.09405109, z: 0.030023064}
+  m_LocalPosition: {x: 0.072, y: 0.086, z: 0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
