@@ -67,9 +67,15 @@ public class SimpleShoot : MonoBehaviour
 
     public void PullTheTrigger()
     {
-        if( magazine && magazine.no_of_bullets > 0 && isslide ) { gunAnimator.SetTrigger("Fire"); }
+        if (magazine && magazine.no_of_bullets > 0 && isslide)
+        {
+            gunAnimator.SetTrigger("Fire");
+        }
+
+
         else { source.PlayOneShot(nobulletsfx); }
-       
+       // gunAnimator.SetTrigger("Fire");
+
     }
 
 
@@ -82,6 +88,7 @@ public class SimpleShoot : MonoBehaviour
         if (muzzleFlashPrefab)
         {
             //Create the muzzle flash
+            print("doomnby");
             GameObject tempFlash;
             tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
 
@@ -91,7 +98,10 @@ public class SimpleShoot : MonoBehaviour
 
         //cancels if there's no bullet prefeb
         if (!bulletPrefab)
-        { return; }
+        {
+
+            //print("dasddajfae");
+            return; }
 
         // Create a bullet and add force on it in direction of the barrel
         Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
@@ -116,5 +126,9 @@ public class SimpleShoot : MonoBehaviour
         //Destroy casing after X seconds
         Destroy(tempCasing, destroyTimer);
     }
-
+    public void print()
+    {
+        print("hii");
+    }
+    
 }
