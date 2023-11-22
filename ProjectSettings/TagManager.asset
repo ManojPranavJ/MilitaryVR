@@ -12,6 +12,7 @@ TagManager:
   - Magazine mp5
   - handle mp5
   - 3rd part mp5
+  - handle part mp5
   layers:
   - Default
   - TransparentFX
