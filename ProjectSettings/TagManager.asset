@@ -6,9 +6,12 @@ TagManager:
   tags:
   - GrabInteractable
   - Xr
-  - Magazine
   - Barrel
   - Slider
+  - Magazine
+  - Magazine mp5
+  - handle mp5
+  - 3rd part mp5
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - GrabInteractable
   - snap
   - gun
-  - 
+  - magazine
   - 
   - 
   - 
