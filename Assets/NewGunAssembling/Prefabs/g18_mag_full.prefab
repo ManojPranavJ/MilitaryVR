@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 936918753713179790}
   - component: {fileID: 6565501730992052655}
   - component: {fileID: 7395521155627189928}
+  - component: {fileID: 5587741164605240220}
   m_Layer: 6
   m_Name: g18_mag_full
   m_TagString: Magazine
@@ -30,13 +31,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9198535678637664443}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0.2207, y: 1.0058, z: -0.37888637}
   m_LocalScale: {x: 100, y: 99.999985, z: 99.999985}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &772013955095641799
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -128,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 6565501730992052655}
+  - {fileID: 5587741164605240220}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -284,7 +285,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -302,3 +303,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   no_of_bullets: 8
+--- !u!65 &5587741164605240220
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9198535678637664443}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00026123345, y: 0.00025805828, z: 0.00088276435}
+  m_Center: {x: 0, y: -0.00002680533, z: -0.00000018665571}

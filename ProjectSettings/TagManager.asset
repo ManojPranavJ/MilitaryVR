@@ -9,6 +9,7 @@ TagManager:
   - Magazine
   - Barrel
   - Slider
+  - GlockGun
   layers:
   - Default
   - TransparentFX
