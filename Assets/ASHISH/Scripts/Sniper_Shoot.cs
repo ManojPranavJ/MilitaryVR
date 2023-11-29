@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 [AddComponentMenu("Nokobot/Modern Guns/Simple Shoot")]
 public class Sniper_Shoot : MonoBehaviour
 {
+    int a = 0;
     [Header("Prefab Refrences")]
     public GameObject bulletPrefab;
     public GameObject casingPrefab;
@@ -17,7 +19,8 @@ public class Sniper_Shoot : MonoBehaviour
     [SerializeField] private Transform casingExitLocation;
 
     [Header("Settings")]
-    [Tooltip("Specify time to destory the casing object")] [SerializeField] private float destroyTimer = 2f;
+    [Tooltip("Specify time to destory the casing object")] [SerializeField] private float BulletTimer = 2f;
+    [SerializeField] private float FlashTimer = 1f;
     [Tooltip("Bullet Speed")] [SerializeField] private float shotPower = 500f;
     [Tooltip("Casing Ejection Speed")] [SerializeField] private float ejectPower = 150f;
 
@@ -27,8 +30,8 @@ public class Sniper_Shoot : MonoBehaviour
 
     public AudioSource source;
     public AudioClip fireSound;
-    public AudioClip reload;
-    public AudioClip nobulletsfx;
+    //public AudioClip reload;
+    //public AudioClip nobulletsfx;
     //public bool isslide = true;
 
 
@@ -56,6 +59,7 @@ public class Sniper_Shoot : MonoBehaviour
 
     void Start()
     {
+        
         if (barrelLocation == null)
             barrelLocation = transform;
 
@@ -69,6 +73,8 @@ public class Sniper_Shoot : MonoBehaviour
     {
         //if (magazine && magazine.no_of_bullets > 0 && isslide)
             gunAnimator.SetTrigger("Fire");
+        a++;
+        Debug.Log(a);
         //else { source.PlayOneShot(nobulletsfx); }
        // gunAnimator.SetTrigger("Fire");
 
@@ -79,7 +85,7 @@ public class Sniper_Shoot : MonoBehaviour
     void Shoot()
     {
         //magazine.no_of_bullets--;
-        //source.PlayOneShot(fireSound);
+        source.PlayOneShot(fireSound);
         
         if (muzzleFlashPrefab)
         {
@@ -89,7 +95,7 @@ public class Sniper_Shoot : MonoBehaviour
             tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
 
             //Destroy the muzzle flash effect
-            Destroy(tempFlash, destroyTimer);
+            Destroy(tempFlash, FlashTimer);
         }
 
         //cancels if there's no bullet prefeb
@@ -117,7 +123,7 @@ public class Sniper_Shoot : MonoBehaviour
         tempCasing.GetComponent<Rigidbody>().AddTorque(new Vector3(0, Random.Range(100f, 500f), Random.Range(100f, 1000f)), ForceMode.Impulse);
 
         //Destroy casing after X seconds
-        Destroy(tempCasing, destroyTimer);
+        Destroy(tempCasing, BulletTimer);
     }
     
 }

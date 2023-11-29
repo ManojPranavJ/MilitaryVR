@@ -10,6 +10,7 @@ TagManager:
   - Barrel
   - Slider
   - GlockGun
+  - Sniper_Magazine
   layers:
   - Default
   - TransparentFX
